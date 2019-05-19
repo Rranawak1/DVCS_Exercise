@@ -1,11 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
+
 namespace GroceryList.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
     public partial class Store
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -36,6 +36,15 @@ namespace GroceryList.Data.Entities
         [Required]
         [StringLength(12)]
         public string Phone { get; set; }
+
+        #region Not-Mapped Properties 
+        // NotMapped Properties are properties that exist on the Entity, but not in the Database
+        // These properties help us make our properties expressive. For example getting the full name instead of the first and last name seperately
+
+        public string CityLocation
+        { get { return City + ":" + Location; } }
+
+        #endregion
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Order> Orders { get; set; }

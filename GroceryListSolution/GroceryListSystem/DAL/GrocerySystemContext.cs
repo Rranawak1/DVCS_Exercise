@@ -1,9 +1,14 @@
- using System;
-using System.Data.Entity;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace GroceryList.Data.Entities
+
+#region Additional Namespaces
+using System.Data.Entity;
+using GroceryList.Data.Entities;
+#endregion
+
+namespace GroceryListSystem.DAL
 {
     public partial class GrocerySystemContext : DbContext
     {

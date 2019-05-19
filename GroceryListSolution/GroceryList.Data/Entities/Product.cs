@@ -1,11 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data.Entity.Spatial;
+
 namespace GroceryList.Data.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
-
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -35,6 +35,14 @@ namespace GroceryList.Data.Entities
         public bool Taxable { get; set; }
 
         public virtual Category Category { get; set; }
+
+        #region Not-Mapped Properties 
+        // NotMapped Properties are properties that exist on the Entity, but not in the Database
+        // These properties help us make our properties expressive. For example getting the full name instead of the first and last name seperately
+        public string DescriptionUnitSize
+        { get { return Description +"(" + UnitSize + ")" ; } }
+
+        #endregion
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderList> OrderLists { get; set; }
