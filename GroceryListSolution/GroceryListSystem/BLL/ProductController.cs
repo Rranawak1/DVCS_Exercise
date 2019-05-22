@@ -40,13 +40,11 @@ namespace GroceryListSystem.BLL
             using (var context = new GrocerySystemContext())
             {
                 var results = from x in context.Products
-                              where x.ProductID == categoryid
+                              where x.CategoryID == categoryid
                               select x;
                 return results.ToList();
             }
         }
-
-
 
 
         #region Add,Update,Delete 

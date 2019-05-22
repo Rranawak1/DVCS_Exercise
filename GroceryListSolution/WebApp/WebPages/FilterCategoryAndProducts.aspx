@@ -16,18 +16,21 @@
 
         <asp:ObjectDataSource ID="ProductGridViewListODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Category_GetByProduct" TypeName="GroceryListSystem.BLL.ProductController">
             <SelectParameters>
-                <asp:ControlParameter ControlID="CategoryList" PropertyName="SelectedValue" Name="categoryid" Type="Int32"></asp:ControlParameter>
-            </SelectParameters>
-        </asp:ObjectDataSource>
-        <asp:GridView ID="ProductList" runat="server" AutoGenerateColumns="False" DataSourceID="ProductGridViewListODS" >
-            <Columns>
-                <asp:BoundField DataField="ProductID" HeaderText="ProductID" SortExpression="ProductID"></asp:BoundField>
-                <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description"></asp:BoundField>
-                <asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
-                <asp:BoundField DataField="Discount" HeaderText="Discount" SortExpression="Discount"></asp:BoundField>
-                <asp:BoundField DataField="UnitSize" HeaderText="UnitSize" SortExpression="UnitSize"></asp:BoundField>
-                <asp:CheckBoxField DataField="Taxable" HeaderText="Taxable" SortExpression="Taxable"></asp:CheckBoxField>
-            </Columns>
+				<asp:ControlParameter ControlID="CategoryList" PropertyName="SelectedValue" Name="categoryid" Type="Int32" DefaultValue="0"></asp:ControlParameter>
+			</SelectParameters>
+		</asp:ObjectDataSource>
+
+		<asp:GridView ID="ProductList" runat="server" AutoGenerateColumns="False" DataSourceID="ProductGridViewListODS" AllowPaging="True" CssClass="table table-striped" GridLines="Horizontal" BorderStyle="None" >
+			<Columns>
+				<asp:BoundField DataField="ProductID" HeaderText="ID" SortExpression="ProductID"></asp:BoundField>
+				<asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description"></asp:BoundField>
+				<asp:BoundField DataField="Price" HeaderText="Price" SortExpression="Price"></asp:BoundField>
+				<asp:BoundField DataField="Discount" HeaderText="Discount" SortExpression="Discount"></asp:BoundField>
+				<asp:BoundField DataField="UnitSize" HeaderText="UnitSize" SortExpression="UnitSize"></asp:BoundField>
+				<asp:BoundField DataField="CategoryID" HeaderText="CategoryID" SortExpression="CategoryID" Visible="false"></asp:BoundField>
+				<asp:CheckBoxField DataField="Taxable" HeaderText="Taxable" SortExpression="Taxable"></asp:CheckBoxField>
+				<asp:BoundField DataField="DescriptionUnitSize" HeaderText="DescriptionUnitSize" ReadOnly="True" SortExpression="DescriptionUnitSize" Visible="false"></asp:BoundField>
+			</Columns>
         </asp:GridView>
 
         
