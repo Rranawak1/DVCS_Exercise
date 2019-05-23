@@ -7,72 +7,54 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp.WebPages {
+namespace DMIT2018Common.UserControls {
     
     
-    public partial class FilterCategoryAndProducts {
+    public partial class MessageUserControl {
         
         /// <summary>
-        /// MessageUserControl control.
+        /// MessagePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::DMIT2018Common.UserControls.MessageUserControl MessageUserControl;
+        protected global::System.Web.UI.WebControls.Panel MessagePanel;
         
         /// <summary>
-        /// label1 control.
+        /// MessageTitleIcon control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label1;
+        protected global::System.Web.UI.WebControls.Label MessageTitleIcon;
         
         /// <summary>
-        /// CategoryListODS control.
+        /// MessageTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource CategoryListODS;
+        protected global::System.Web.UI.WebControls.Label MessageTitle;
         
         /// <summary>
-        /// CategoryList control.
+        /// MessageLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CategoryList;
+        protected global::System.Web.UI.WebControls.Label MessageLabel;
         
         /// <summary>
-        /// FetchButton control.
+        /// MessageDetailsRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton FetchButton;
-        
-        /// <summary>
-        /// ProductGridViewListODS control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ProductGridViewListODS;
-        
-        /// <summary>
-        /// ProductList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductList;
+        protected global::System.Web.UI.WebControls.Repeater MessageDetailsRepeater;
     }
 }

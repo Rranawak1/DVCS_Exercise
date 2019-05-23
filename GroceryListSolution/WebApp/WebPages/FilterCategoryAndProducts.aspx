@@ -1,10 +1,14 @@
 ﻿<%@ Page Title="Filtering Products" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="FilterCategoryAndProducts.aspx.cs" Inherits="WebApp.WebPages.FilterCategoryAndProducts" %>
 
+<%@ Register Src="~/UserControls/MessageUserControl.ascx" TagPrefix="uc1" TagName="MessageUserControl" %>
+
+
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Query: ODS</h1>
 
     <div class="col-md-offset-3">
+	<uc1:MessageUserControl runat="server" id="MessageUserControl" />
     <asp:Label ID="label1" runat="server" Text="Select a Category "></asp:Label>
     &nbsp;&nbsp;
     <asp:ObjectDataSource ID="CategoryListODS" runat="server" OldValuesParameterFormatString="original_{0}" SelectMethod="Category_List" 
